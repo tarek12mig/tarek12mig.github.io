@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
-
     <style>
         @media (min-width: 43em) {
             /* Bump up size of carousel content */
@@ -29,6 +28,7 @@
         @media (min-width: 992px) {
         }
     </style>
+    <script src="LoginAuth.js"></script>
 </head>
 <body>
 
@@ -94,27 +94,30 @@
                     </div>
                     <div class="card-body p-4 p-sm-5">
                         <h4 class="card-title text-center mb-5 fw-light fs-5">Login with ASU Account</h4>
-                        <form id="LoginForm">
+                        <form id="LoginForm" onsubmit="return validateFormAndLogin()">
 
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInputUsername"
-                                       placeholder="myusername" required autofocus>
+                                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
                                 <label for="floatingInputUsername">Student ID</label>
+                                <div id="username-error" class="invalid-feedback" style="display: none;">
+                                    Please enter your Student ID.
+                                </div>
                             </div>
-
-                            <hr>
 
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword"
-                                       placeholder="Password">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
                                 <label for="floatingPassword">Password</label>
+                                <div id="password-error" class="invalid-feedback" style="display: none;">
+                                    Please enter your Password.
+                                </div>
                             </div>
+
 
                             <div class="mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Remember my Login
-                            </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Remember my Login
+                                </label>
                             </div>
 
                             <div class="d-grid mb-2">
@@ -122,14 +125,6 @@
                                     Sign-up
                                 </button>
                             </div>
-
-<!--                            <hr class="my-4">-->
-
-<!--                            <div class="d-grid mb-2">-->
-<!--                                <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">-->
-<!--                                    <i class="fab fa-google me-2"></i> Sign-up with ASU account-->
-<!--                                </button>-->
-<!--                            </div>-->
                         </form>
                     </div>
                 </div>
