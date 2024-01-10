@@ -43,8 +43,11 @@
 
 #aboutUsJombotronImg {
     background-image: url(assets/AboutUsBG.png);
-    object-fit: cover;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
     color: white;
 }
 
@@ -119,19 +122,14 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-    height: 43rem;
+    max-height: 44em;
+    width:100%;
 }
 
 .carousel-item > img {
-    height: 65vh;
-    min-height: 350px;
-    width: 100%;
-    margin: 0 auto;
-    object-fit: fill;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    object-position: right center;
+    padding-top: 50px;
+    max-height: 44em;
+    width:100%;
 }
 
 
@@ -295,6 +293,22 @@ body {
     padding: .75rem 1rem;
 }
 
+#sideNavbar {
+    width: 15em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 2.5em;
+    background: #111111;
+    color: #FFFFFF;
+    height: 100vh;
+}
 
-
-
+#sitemap {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
